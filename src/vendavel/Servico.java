@@ -1,19 +1,19 @@
 package vendavel;
 
-public class Servico implements Vendavel {
+public class Servico implements Vendavel  {
 
-    private String descricao;
-    private double precoHora;
+    private String tipo;
+    private double valorHora;
 
 
     @Override
     public double precoTotalProduto(int quantidade) {
-        return precoHora * quantidade;
+        return valorHora * quantidade;
     }
 
     @Override
     public void aplicarDesconto(double percentualDesconto) {
-        precoHora -= precoHora * (percentualDesconto / 100);
+        valorHora -= valorHora * (percentualDesconto /100);
 
     }
 }
