@@ -1,8 +1,17 @@
 package projeto.alura.musica.modelo;
 
-public class Musicas extends Audio implements Exibicao, ClassificavelDois {
+public class Musicas extends Audio implements Exibicao  {
+    private String album;
     private String cantor;
-    private int anoLancamento;
+    private String genero;
+
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
+    }
 
     public String getCantor() {
         return cantor;
@@ -12,38 +21,33 @@ public class Musicas extends Audio implements Exibicao, ClassificavelDois {
         this.cantor = cantor;
     }
 
-    public int getAnoLancamento() {
-        return anoLancamento;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setAnoLancamento(int anoLancamento) {
-        this.anoLancamento = anoLancamento;
-    }
-
-    @Override
-    public int clasificacaoEmCurtidas(int curtidas) {
-        return super.clasificacaoEmCurtidas(curtidas);
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     @Override
-    public void reproduzirAudio() {
-        System.out.println("Esta tocando: " + getTitulo());
+    public int getClassificacao() {
+        if(this.getTotalCurtidas() > 2000) {
+            return 10;
+        } else {
+            return 7;
+        }
     }
 
     @Override
     public void exibirFixaTecnica() {
-        System.out.println(getTitulo());
+        System.out.println("Titulo: " + getTitulo());
+        System.out.println("Album: " + album);
         System.out.println("Cantor: " + cantor);
-        System.out.println("Ano de lançamento: " + anoLancamento);
-        System.out.println("Duração: " + getDuracao());
-        System.out.println("número de curtidas: " + getCurtidas());
-        System.out.println("Classificação: " + getClasificacao());
-        System.out.println("Total de repordução: " + getTotalDeReproducoes());
-    }
+        System.out.println("Genero: " + genero);
+        System.out.println("Total de reprodução: " + getTotalReproducoes());
+        System.out.println("Total de curtidas: " +getTotalCurtidas());
 
-    @Override
-    public int clssificacaoId() {
-        return clasificacaoEmCurtidas();                   // não to conseguinto achar a logica da classficação
+
     }
 }
 
