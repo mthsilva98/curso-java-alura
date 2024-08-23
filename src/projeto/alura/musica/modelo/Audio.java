@@ -6,7 +6,7 @@ public class Audio {
     private double duracao;
     private int totalDeReproducoes;
     private int curtidas;
-    private String clasificacao;
+    private int clasificacao;
 
 
     public String getTitulo() {
@@ -41,22 +41,21 @@ public class Audio {
         this.curtidas = curtidas;
     }
 
-    public String getClasificacao() {
+    public int getClasificacao() {
         return clasificacao;
     }
 
-    public void setClasificacao(String clasificacao) {
+    public void setClasificacao(int clasificacao) {
         this.clasificacao = clasificacao;
     }
 
-    public int curtidaUsuario(int curtida){
-        return curtidas += curtida;
+    public int clasificacaoEmCurtidas(int curtidas){
+        return clasificacao += curtidas;
+
     }
     public void reproduzirAudio() {
         System.out.println("Esta tocanto o audio");
 
     }
-    public void exibirFixaTecnica() {
-        System.out.println();
-    }
+
 }
