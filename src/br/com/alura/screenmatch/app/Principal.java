@@ -1,8 +1,12 @@
+package br.com.alura.screenmatch.app;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodios;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
+
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
@@ -53,6 +57,21 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeMatheus = new Filme();
+        filmeMatheus.setDuracaoEmMinutos(200);
+        filmeMatheus.setNome("Matrix");
+        filmeMatheus.setAnoDeLancamento(2022);
+        filmeMatheus.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeMatheus);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println("Toda lista: " + listaDeFilmes);
+
 
 
 
