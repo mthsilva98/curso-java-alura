@@ -53,7 +53,7 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var filmeMatheus = new Filme("Dogville", 2022);
+        var filmeMatheus = new Filme("Matrix", 2022);
         filmeMatheus.setDuracaoEmMinutos(200);
         //filmeMatheus.setNome("Matrix");  Essa linha agora esta na linha 62
         filmeMatheus.avalia(10);
