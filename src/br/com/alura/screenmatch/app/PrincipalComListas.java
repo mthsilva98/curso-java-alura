@@ -4,7 +4,7 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class PrincipalComListas {
 
         Filme f1 = filmeMatheus; // Isso é uma variável de referência, ela está se referindo a filmeMatheus
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
         lista.add(filmeMatheus);
         lista.add(meuFilme);
         lista.add(outroFilme);
@@ -35,11 +35,22 @@ public class PrincipalComListas {
              // Filme filme = (Filme) titulo; Exemplo usando em javas mais antigos antigo
                 System.out.println("Classificação " + filme.getClassificacao());
             }
-
-
-
-
         }
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Paulo");
+        buscaPorArtista.add("Jaqueline");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação: " + buscaPorArtista);
+
+        Collections.sort(lista);
+        System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(lista);
 
     }
 }
