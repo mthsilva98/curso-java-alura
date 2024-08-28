@@ -1,6 +1,8 @@
 package aplicaocompras;
 
-public class Compra implements Comparable <Compra> {
+import java.util.List;
+
+public class Compra implements  Comparable <Compra>   {
 
     private String descricao;
     private double valor;
@@ -20,7 +22,7 @@ public class Compra implements Comparable <Compra> {
 
     @Override
     public String toString() {
-        return "Descrição: " + descricao + " Valor: " + valor;
+        return "Descrição: " + descricao + " Valor: " + valor ;
     }
 
     @Override

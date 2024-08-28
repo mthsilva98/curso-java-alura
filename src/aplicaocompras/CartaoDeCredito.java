@@ -1,5 +1,6 @@
 package aplicaocompras;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,8 +15,7 @@ public class CartaoDeCredito {
         this.saldo = limite;
         this.compras = new ArrayList<>();
     }
-
-    public boolean lancaCompra(Compra compra) {
+    public boolean iniciarCompra(Compra compra) {
         if (this.saldo > compra.getValor()) {
             this.saldo -= compra.getValor();
             this.compras.add(compra);
@@ -24,16 +24,18 @@ public class CartaoDeCredito {
         return false;
     }
 
-
     public double getLimite() {
         return limite;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
     }
 
     public double getSaldo() {
         return saldo;
     }
 
-    public List<Compra> getCompras() {
-        return compras;
-    }
 }
+
+
