@@ -14,7 +14,7 @@ public class Themealdb {
             System.out.println("Digite o nome da receita para a busca: ");
             var nomeReceita = leitura.nextLine();
 
-            String endereco = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + nomeReceita;
+            String endereco = "" + nomeReceita;
 
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();

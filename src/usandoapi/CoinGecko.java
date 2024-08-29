@@ -13,7 +13,7 @@ public class CoinGecko {
         System.out.println("Digite o nome da criptomoeda para a cotação (por exemplo, bitcoin): ");
         var criptoNome = leitura.nextLine();
 
-        String endereco = "https://api.coingecko.com/api/v3/simple/price?ids=" + criptoNome + "&vs_currencies=usd";
+        String endereco = "" + criptoNome + "";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
